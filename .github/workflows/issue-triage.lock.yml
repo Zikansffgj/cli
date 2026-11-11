@@ -626,7 +626,7 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
           NODE_EXTRA_CA_CERTS: /tmp/gh-aw/proxy-logs/proxy-tls/ca.crt
-          REPO: cli/cli
+          REPO: ${GITHUB_REPOSITORY}
         continue-on-error: true
       - name: Configure Git credentials
         env:
