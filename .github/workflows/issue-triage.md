@@ -291,7 +291,7 @@ safe-outputs:
 
 # Issue Triage (skills-driven)
 
-**Issue**: #${{ github.event.issue.number || inputs.issue_number }} in `cli/cli`
+**Issue**: #${{ github.event.issue.number || inputs.issue_number }} in `${{ github.repository }}`
 
 ## Step 1: Load your triage instructions
 
@@ -315,7 +315,7 @@ or avoid details blocks. The local `gh-*` allowlist is authoritative for command
 
 ## Step 2: Read the issue and check for spam
 
-Read issue #${{ github.event.issue.number || inputs.issue_number }} in `cli/cli`
+Read issue #${{ github.event.issue.number || inputs.issue_number }} in `${{ github.repository }}`
 (title, body, and any existing labels). If this run was triggered via `workflow_dispatch`,
 fetch the issue by number using the GitHub issue tools.
 
@@ -347,7 +347,7 @@ a shared error message, or a loosely related request is not enough.
 
 Exclude the current issue by comparing the returned issue numbers, not by adding
 `number:` or `-number:` to the search query. Those are not supported issue-search
-qualifiers and can hide valid matches. Use `repo:cli/cli is:issue` with relevant
+qualifiers and can hide valid matches. Use `repo:${{ github.repository }} is:issue` with relevant
 keywords, then discard the current issue from the results.
 
 If a candidate describes the same problem or requested behavior with high confidence:
